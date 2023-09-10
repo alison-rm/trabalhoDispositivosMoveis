@@ -9,7 +9,7 @@ const Login = ({ navigation }) => {
     if (email.trim() === '' || password.trim() === '') {
       Alert.alert('O preenchimento dos campos é obrigatório');
     } else {
-      // Verificação de login bem-sucedida, navegue para a tela "Home"
+      
       navigation.navigate('Home');
     }
   };

@@ -49,6 +49,7 @@ const Details = () => {
       >
         <Text style={styles.buttonText}>Voltar</Text>
       </TouchableOpacity>
+      <Button title="Tela Extra" onPress={() => navigation.navigate('Extra')}/>
     </View>
   );
 };
