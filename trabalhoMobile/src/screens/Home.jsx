@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native'; 
 
-const Home = ({ navigation }) => {
-    const [countries, setCountries] = useState([]);
+const Home = () => {
+  const navigation = useNavigation(); 
+
+  const [countries, setCountries] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const countriesPerPage = 10;
 
@@ -24,7 +27,7 @@ const Home = ({ navigation }) => {
   }, []);
 
   const handleCountryPress = (country) => {
-    navigation.navigate('CountryDetails', { country });
+    navigation.navigate('Details', { code: country.cca3 }); 
   };
 
   const handlePreviousPage = () => {
